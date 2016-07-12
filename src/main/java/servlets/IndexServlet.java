@@ -1,5 +1,10 @@
 package servlets;
 
+import Dao.UserDao;
+import entities.User;
+import org.hibernate.Session;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,10 +18,24 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns ="/index")
 public class IndexServlet extends HttpServlet {
+    @EJB
+    UserDao r;
+
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-req.getRequestDispatcher("index.jsp").forward(req,resp);
 
+
+
+
+        User user = new User();
+        user.setLogin("fsk");
+        user.setPassword("asfskafs");
+        r.save(user);
+
+req.setAttribute("list",r.findAll());
+        req.getRequestDispatcher("index.jsp").forward(req,resp);
     }
 }
