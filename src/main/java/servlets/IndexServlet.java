@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.*;
 
 /**
  * Created by kiumars-pc on 6/28/2016.
@@ -26,16 +27,19 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-
-
-
         User user = new User();
         user.setLogin("fsk");
         user.setPassword("asfskafs");
         r.save(user);
 
-req.setAttribute("list",r.findAll());
+        ArrayList<String> a=new ArrayList<String>();
+       a.add("misha");
+        a.add("alexy");
+        a.add("ura");
+        req.setAttribute("r",a);
+        req.setAttribute("myName","fz");
+        req.setAttribute("list",r.findAll());
+
         req.getRequestDispatcher("index.jsp").forward(req,resp);
     }
 }

@@ -7,6 +7,13 @@
 <h2>page</h2>
 
 
+<h1>${myName}</h1>
+
+<c:forEach items="${r}" var="bv">
+    ${bv}<br>
+</c:forEach>
+
+
 <c:forEach items="${list}" var="item">
     ${item.getLogin()}<br>
 </c:forEach>

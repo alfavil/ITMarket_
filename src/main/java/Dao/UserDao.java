@@ -18,6 +18,7 @@ public class UserDao {
     @PersistenceContext(unitName = "COLIBRI")
     private EntityManager em;
 
+
     public void save(User user){
         em.persist(user);
     }
