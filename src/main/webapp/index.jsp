@@ -18,5 +18,12 @@
     ${item.getLogin()}<br>
 </c:forEach>
 
+
+<c:forEach items="${q}" var="mn">
+    ${mn}<br>
+
+    </c:forEach>
+
+
 </body>
 </html>

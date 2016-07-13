@@ -36,7 +36,14 @@ public class IndexServlet extends HttpServlet {
        a.add("misha");
         a.add("alexy");
         a.add("ura");
+
+        ArrayList<String> b=new ArrayList<String>();
+        b.add("ku");
+        b.add("se");
+        b.add("gf");
         req.setAttribute("r",a);
+        req.setAttribute("q",b);
+
         req.setAttribute("myName","fz");
         req.setAttribute("list",r.findAll());
 
