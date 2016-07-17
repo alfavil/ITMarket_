@@ -4,10 +4,13 @@
 <%@ page import="java.util.List" %>
 <html>
 <body>
+
+<jsp:include page="menu.jsp"/>
 <h2>page</h2>
 
 
 <h1>${myName}</h1>
+
 
 <c:forEach items="${r}" var="bv">
     ${bv}<br>
@@ -21,7 +24,6 @@
 
 <c:forEach items="${q}" var="mn">
     ${mn}<br>
-
     </c:forEach>
 
 

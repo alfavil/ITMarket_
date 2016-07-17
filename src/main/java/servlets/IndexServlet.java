@@ -33,7 +33,7 @@ public class IndexServlet extends HttpServlet {
         r.save(user);
 
         ArrayList<String> a=new ArrayList<String>();
-       a.add("misha");
+        a.add("misha");
         a.add("alexy");
         a.add("ura");
 
@@ -41,12 +41,19 @@ public class IndexServlet extends HttpServlet {
         b.add("ku");
         b.add("se");
         b.add("gf");
+
         req.setAttribute("r",a);
         req.setAttribute("q",b);
 
         req.setAttribute("myName","fz");
+
         req.setAttribute("list",r.findAll());
 
         req.getRequestDispatcher("index.jsp").forward(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.print(req.getAttribute("asf"));
     }
 }
